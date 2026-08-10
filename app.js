@@ -9,8 +9,11 @@ dns.setServers(["8.8.8.8"]);
 console.log("DNS:", dns.getServers());
 
 const express = require("express");
-const router = express.Router({mergeParams: true});
+//const router = express.Router({mergeParams: true});
 const app = express();
+
+
+
 const mongoose = require("mongoose");
 
 const path = require("path");
@@ -87,6 +90,10 @@ app.get("/", (req, res) => {
     res.redirect("/listings");
 });
 
+
+app.get("/test", (req, res) => {
+    res.send("TEST ROUTE WORKING");
+});
 
 
 app.use(session(sessionOptions));
