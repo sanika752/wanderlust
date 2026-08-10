@@ -27,6 +27,17 @@ module.exports.showListing = async(req,res) =>{
 };
 
 
+
+module.exports.createListing = async (req, res, next) => {
+    console.log(" CREATE LISTING ROUTE HIT");
+    console.log("BODY:", req.body);
+    console.log("FILE:", req.file);
+
+    let url = req.file.path;
+
+
+
+
 module.exports.createListing = async(req,res,next) =>{
      let url = req.file.path;
      let filename = req.file.filename;

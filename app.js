@@ -147,7 +147,7 @@ app.all("/*splat",(req,res,next)=>{
 
 
 app.use((err, req, res, next) => {
-    console.log("🔥 ACTUAL ERROR:", err);
+    console.log("ACTUAL ERROR:", err);
     let {statusCode = 500, message = "Something Went Wrong!"} = err;
     res.status(statusCode).send(message);
 });
