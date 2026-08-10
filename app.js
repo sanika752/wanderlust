@@ -139,11 +139,19 @@ app.all("/*splat",(req,res,next)=>{
     next(new ExpressError(404,"page Not Found!"));
 });
 
-app.use((err,req,res,next)=>{
-    let {statusCode=500, message="Something Went Wrong!"} = err;
-   // res.status(statusCode).send(message);
-   res.render("listings/error.ejs",{ message});
+// app.use((err,req,res,next)=>{
+// let {statusCode=500, message="Something Went Wrong!"} = err;
+// // res.status(statusCode).send(message);
+// res.render("listings/error.ejs",{ message});
+// });
+
+
+app.use((err, req, res, next) => {
+    console.log("🔥 ACTUAL ERROR:", err);
+    let {statusCode = 500, message = "Something Went Wrong!"} = err;
+    res.status(statusCode).send(message);
 });
+
 
 app.listen(8080,() => {
     console.log("server is listening to port 8080");
