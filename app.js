@@ -83,7 +83,9 @@ const sessionOptions = {
 // app.get("/",(req,res)=>{
 //     res.send("Hi,  am root");
 // });
-
+app.get("/", (req, res) => {
+    res.redirect("/listings");
+});
 
 
 
@@ -117,9 +119,6 @@ app.use((req,res,next) => {
 // });
 
 
-app.get("/test", (req, res) => {
-    res.send("TEST ROUTE WORKING");
-});
 
 
 
